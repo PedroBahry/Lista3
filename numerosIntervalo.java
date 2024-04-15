@@ -7,5 +7,7 @@ class numerosIntervalo {
             }
         }
         return count;
+
+        scanner.close()
     }
 }

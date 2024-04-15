@@ -16,6 +16,8 @@ public class mainlojaMamao {
 
         System.out.println("O valor das prestações são: R$" + valorPrestacao);
 
+
+        scanner.close();
     }
 
 }
