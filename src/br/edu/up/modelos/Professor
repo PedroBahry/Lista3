@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class SalarioProfessor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o nível do professor (1, 2 ou 3):");
+        int nivel = scanner.nextInt();
+
+        double valorHora = 0;
+        switch (nivel) {
+            case 1:
+                valorHora = 12.0;
+                break;
+            case 2:
+                valorHora = 17.0;
+                break;
+            case 3:
+                valorHora = 25.0;
+                break;
+            default:
+                System.out.println("Nível inválido.");
+                break;
+        }
+
+        if (valorHora > 0) {
+            System.out.println("Digite o número de horas/aula:");
+            int horas = scanner.nextInt();
+            double salario = valorHora * horas;
+            System.out.println("O salário do professor é R$" + salario);
+        }
+        scanner.close();
+    }
+}

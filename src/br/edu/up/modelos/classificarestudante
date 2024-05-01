@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class ClassificarEstudante {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o nome do estudante:");
+        String nome = scanner.nextLine();
+
+        System.out.println("Digite o número de matrícula do estudante:");
+        int matricula = scanner.nextInt();
+
+        System.out.println("Digite a nota do trabalho de laboratório:");
+        double notaLaboratorio = scanner.nextDouble();
+
+        System.out.println("Digite a nota da avaliação semestral:");
+        double notaSemestral = scanner.nextDouble();
+
+        System.out.println("Digite a nota do exame final:");
+        double notaExame = scanner.nextDouble();
+
+        double notaFinal = (notaLaboratorio * 2 + notaSemestral * 3 + notaExame * 5) / 10;
+
+        String classificacao = "";
+        if (notaFinal >= 8 && notaFinal <= 10) {
+            classificacao = "A";
+        } else if (notaFinal >= 7 && notaFinal < 8) {
+            classificacao = "B";
+        } else if (notaFinal >= 6 && notaFinal < 7) {
+            classificacao = "C";
+        } else if (notaFinal >= 5 && notaFinal < 6) {
+            classificacao = "D";
+        } else {
+            classificacao = "R";
+        }
+
+        System.out.println("Nome do estudante: " + nome);
+        System.out.println("Número de matrícula: " + matricula);
+        System.out.println("Nota Final: " + notaFinal);
+        System.out.println("Classificação: " + classificacao);
+        scanner.close();
+    }
+}

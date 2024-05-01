@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class ContaDeLuz {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o tipo de cliente (1, 2 ou 3):");
+        int tipoCliente = scanner.nextInt();
+
+        System.out.println("Digite a quantidade de KW/h consumidos:");
+        double consumo = scanner.nextDouble();
+
+        double valorKWh = 0;
+        switch (tipoCliente) {
+            case 1:
+                valorKWh = 0.60;
+                break;
+            case 2:
+                valorKWh = 0.48;
+                break;
+            case 3:
+                valorKWh = 1.29;
+                break;
+            default:
+                System.out.println("Tipo de cliente inválido.");
+                break;
+        }
+
+        if (valorKWh > 0) {
+            double valorConta = valorKWh * consumo;
+            System.out.println("O valor da conta de luz é R$" + valorConta);
+        }
+        scanner.close();
+    }
+}

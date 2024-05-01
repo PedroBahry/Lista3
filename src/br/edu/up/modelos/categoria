@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ClassificarSegurado {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o nome do pretendente:");
+        String nome = scanner.nextLine();
+
+        System.out.println("Digite a idade do pretendente:");
+        int idade = scanner.nextInt();
+
+        System.out.println("Digite o grupo de risco (1, 2 ou 3):");
+        int grupoRisco = scanner.nextInt();
+
+        String categoria = "";
+        if (idade >= 17 && idade <= 70) {
+            switch (grupoRisco) {
+                case 1:
+                    categoria = "Baixo";
+                    break;
+                case 2:
+                    categoria = "Médio";
+                    break;
+                case 3:
+                    categoria = "Alto";
+                    break;
+                default:
+                    System.out.println("Grupo de risco inválido.");
+                    break;
+            }
+            System.out.println("Nome: " + nome);
+            System.out.println("Idade: " + idade);
+            System.out.println("Grupo de Risco: " + categoria);
+        } else {
+            System.out.println("O pretendente não se enquadra nas categorias de seguro.");
+        }
+        scanner.close();
+    }
+}

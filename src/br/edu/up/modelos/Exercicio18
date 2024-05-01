@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Exercicio18 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o nome do funcionario: ");
+        String nome = scanner.next();
+
+        System.out.println("Insira o sexo do funcionario: ");
+        String sexo = scanner.next();
+
+        System.out.println("Insira a idade do funcionário: ");
+        int idade = scanner.nextInt();
+
+        System.out.println("Insira o salário fixo: ");
+        double salarioFix = scanner.nextDouble();
+
+        Abono abono = new Abono(nome, idade, sexo, salarioFix);
+        double valorAbono = abono.calculoAbono();
+
+        System.out.println("O funcionário " + nome + " recebe um abono de R$ " + valorAbono);
+
+        scanner.close();
+    }
+}
